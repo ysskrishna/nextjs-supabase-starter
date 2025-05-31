@@ -7,7 +7,7 @@ import Link from "next/link"
 
 function SignUpForm() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="container flex items-center justify-center min-h-[80vh] px-4 py-16">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Sign Up</CardTitle>

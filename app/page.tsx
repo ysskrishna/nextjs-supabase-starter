@@ -11,10 +11,10 @@ export default function Home() {
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Button asChild size="lg">
-            <Link href="/dashboard">Sign In</Link>
+            <Link href="/signin">Sign In</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link href="/dashboard">Sign Up</Link>
+            <Link href="/signup">Sign Up</Link>
           </Button>
         </div>
       </div>

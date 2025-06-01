@@ -8,9 +8,59 @@ import AuthProvider from "@/components/auth/auth-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
+const siteConfig = {
+  name: "Nextjs-supabase-starter",
+  description: "A modern Next.js supabase starter template with authentication, and real-time features",
+  ogImage: "http://localhost:3000/og.png",
+  url: "http://localhost:3000",
+}
+
 export const metadata: Metadata = {
-  title: "Nextjs-supabase-starter",
-  description: "A modern Next.js supabase starter template"
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`
+  },
+  description: siteConfig.description,
+  keywords: ["Next.js", "Supabase", "React", "TypeScript", "Authentication", "Real-time", "Starter Template"],
+  authors: [{ 
+    name: "ysskrishna",
+    url: "ysskrishna.vercel.app"
+  }],
+  creator: "ysskrishna",
+  publisher: "ysskrishna",
+  metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: "@ysskrishna",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  manifest: "/site.webmanifest",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  other: {
+    "linkedin": "https://www.linkedin.com/in/ysskrishna/",
+    "github": "https://github.com/ysskrishna",
+    "producthunt": "https://www.producthunt.com/@ysskrishna",
+  },
 }
 
 export default function RootLayout({

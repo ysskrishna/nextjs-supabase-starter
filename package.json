@@ -2,6 +2,29 @@
   "name": "nextjs-supabase-starter",
   "version": "1.0.0",
   "private": true,
+  "description": "A modern Library Management System built with Next.js 15 and Supabase, featuring a beautiful UI powered by Radix UI components and Tailwind CSS",
+  "author": {
+    "name": "ysskrishna",
+    "url": "https://github.com/ysskrishna"
+  },
+  "keywords": [
+    "nextjs",
+    "supabase",
+    "radix-ui",
+    "tailwind-css",
+    "typescript",
+    "dashboard",
+    "authentication",
+    "react-hook-form",
+    "zod",
+    "ysskrishna",
+    "starter",
+    "template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ysskrishna/nextjs-supabase-starter"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

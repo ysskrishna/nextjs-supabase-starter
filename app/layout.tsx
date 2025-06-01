@@ -10,9 +10,15 @@ const inter = Inter({ subsets: ["latin"] })
 
 const siteConfig = {
   name: "Nextjs-supabase-starter",
-  description: "A modern Next.js supabase starter template with authentication, and real-time features",
+  description: "A modern Library Management System built with Next.js 15 and Supabase, featuring a beautiful UI powered by Radix UI components and Tailwind CSS",
   ogImage: "http://localhost:3000/og.png",
   url: "http://localhost:3000",
+  twitterHandle: "@ysskrishna",
+  author: "ysskrishna",
+  authorUrl: "ysskrishna.vercel.app",
+  githubUrl: "https://github.com/ysskrishna",
+  linkedinUrl: "https://www.linkedin.com/in/ysskrishna/",
+  productHuntUrl: "https://www.producthunt.com/@ysskrishna"
 }
 
 export const metadata: Metadata = {
@@ -21,13 +27,27 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`
   },
   description: siteConfig.description,
-  keywords: ["Next.js", "Supabase", "React", "TypeScript", "Authentication", "Real-time", "Starter Template"],
+  keywords: [
+    "Next.js", 
+    "Supabase", 
+    "React", 
+    "TypeScript", 
+    "Authentication", 
+    "Starter",
+    "Template",
+    "Radix UI",
+    "Tailwind CSS",
+    "Modern Web Development",
+    "Full Stack Development",
+    "React Components",
+    "Web Application"
+  ],
   authors: [{ 
-    name: "ysskrishna",
-    url: "ysskrishna.vercel.app"
+    name: siteConfig.author,
+    url: siteConfig.authorUrl
   }],
-  creator: "ysskrishna",
-  publisher: "ysskrishna",
+  creator: siteConfig.author,
+  publisher: siteConfig.author,
   metadataBase: new URL(siteConfig.url),
   alternates: {
     canonical: "/",
@@ -57,9 +77,12 @@ export const metadata: Metadata = {
     follow: true,
   },
   other: {
-    "linkedin": "https://www.linkedin.com/in/ysskrishna/",
-    "github": "https://github.com/ysskrishna",
-    "producthunt": "https://www.producthunt.com/@ysskrishna",
+    "linkedin": siteConfig.linkedinUrl,
+    "github": siteConfig.githubUrl,
+    "producthunt": siteConfig.productHuntUrl,
+    "application-name": siteConfig.name,
+    "msapplication-TileColor": "#ffffff",
+    "theme-color": "#ffffff",
   },
 }
 

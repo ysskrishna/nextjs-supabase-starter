@@ -10,14 +10,12 @@ type AuthContextType = {
   user: User | null
   session: Session | null
   isLoading: boolean
-  signOut: () => Promise<void>
 }
 
 const AuthContext = createContext<AuthContextType>({
   user: null,
   session: null,
-  isLoading: true,
-  signOut: async () => {},
+  isLoading: true
 })
 
 export const useAuth = () => useContext(AuthContext)
@@ -66,15 +64,10 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
     }
   }, [supabase])
 
-  const signOut = async () => {
-    await supabase.auth.signOut()
-  }
-
   const value = {
     user,
     session,
-    isLoading,
-    signOut,
+    isLoading
   }
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>

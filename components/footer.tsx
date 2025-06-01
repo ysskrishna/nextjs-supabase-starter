@@ -6,7 +6,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Footer() {
   return (
-    <footer className="border-t py-6 md:py-8">
+    <footer className="py-6 md:py-8">
       <div className="container flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-4 md:px-6">
         <div className="flex items-center gap-4">
           <Image

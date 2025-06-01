@@ -97,8 +97,15 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <AuthProvider>
             <div className="flex flex-col min-h-screen">
-              <main className="flex-1">{children}</main>
-              <Footer />
+              <main className="flex-1">
+                <div className="max-w-7xl mx-auto w-full px-4">
+                  {children}
+                </div>
+              </main>
+              <hr className="w-full border-t" />
+              <div className="max-w-7xl mx-auto w-full px-4">
+                <Footer />
+              </div>
             </div>
           </AuthProvider>
         </ThemeProvider>

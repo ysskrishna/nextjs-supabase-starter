@@ -4,7 +4,7 @@ import { ArrowRight, Shield, Zap, Layout } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="container flex flex-col items-center justify-center min-h-[80vh] px-4 py-16">
+    <div className="max-w-7xl mx-auto w-full px-4 flex flex-col items-center justify-center min-h-[80vh]">
       {/* Hero Section */}
       <div className="max-w-4xl space-y-8 text-center mb-16">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
@@ -26,7 +26,7 @@ export default function Home() {
       </div>
 
       {/* Features Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full">
         <div className="flex flex-col items-center text-center p-6 rounded-lg border bg-card">
           <Shield className="w-12 h-12 text-primary mb-4" />
           <h3 className="text-xl font-semibold mb-2">Secure Authentication</h3>

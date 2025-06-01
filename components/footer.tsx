@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { FaGithub, FaLinkedin, FaYoutube, FaProductHunt } from "react-icons/fa"
+import { Button } from "@/components/ui/button"
 
 export default function Footer() {
   return (
@@ -21,6 +22,15 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-4">
+          <Button variant="outline" asChild>
+            <Link
+              href="https://github.com/ysskrishna/nextjs-supabase-starter"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Project
+            </Link>
+          </Button>
           <Link
             href="https://github.com/ysskrishna"
             target="_blank"

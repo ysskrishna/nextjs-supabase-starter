@@ -58,11 +58,7 @@ export default function SignUpForm() {
     setIsGoogleLoading(true)
     setError(null)
     try {
-      const { error } = await signInWithGoogle()
-
-      if (error) {
-        throw error
-      }
+      await signInWithGoogle()
     } catch (error: any) {
       setError(error.message || "Failed to sign up with Google")
       setIsGoogleLoading(false)

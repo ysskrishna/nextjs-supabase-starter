@@ -56,15 +56,7 @@ export default function SignInForm() {
     setIsGoogleLoading(true)
     setError(null)
     try {
-      const response = await signInWithGoogle()
-      console.log("handleGoogleSignIn", response)
-      const { error } = response
-
-
-      if (error) {
-        console.log("handleGoogleSignIn error", error)
-        throw error
-      }
+      await signInWithGoogle()
     } catch (error: any) {
       setError(error.message || "Failed to sign in with Google")
       setIsGoogleLoading(false)

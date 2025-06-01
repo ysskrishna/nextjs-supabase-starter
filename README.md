@@ -67,3 +67,11 @@ The project uses a comprehensive set of modern dependencies including:
 - Radix UI components for accessible UI elements
 - React Hook Form for form handling
 - Zod for schema validation
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This template is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

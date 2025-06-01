@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { FaGithub, FaLinkedin, FaYoutube, FaProductHunt } from "react-icons/fa"
 import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Footer() {
   return (
@@ -22,6 +23,7 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-4">
+          <ThemeToggle />
           <Button variant="outline" asChild>
             <Link
               href="https://github.com/ysskrishna/nextjs-supabase-starter"

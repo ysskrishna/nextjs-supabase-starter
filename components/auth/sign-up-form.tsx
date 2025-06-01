@@ -19,7 +19,8 @@ import { FcGoogle } from "react-icons/fc"
 
 
 export default function SignUpForm() {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isEmailLoading, setIsEmailLoading] = useState(false)
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
 
@@ -38,7 +39,7 @@ export default function SignUpForm() {
   const handleEmailSignUp = async (values: z.infer<typeof signUpSchema>) => {
     setError(null)
     try {
-      setIsLoading(true)
+      setIsEmailLoading(true)
       const { error } = await signUp(values.email, values.password)
 
       if (error) {
@@ -49,12 +50,12 @@ export default function SignUpForm() {
     } catch (error) {
       setError(error instanceof Error ? error.message : "Failed to sign up")
     } finally {
-      setIsLoading(false)
+      setIsEmailLoading(false)
     }
   }
 
   const handleGoogleSignUp = async () => {
-    setIsLoading(true)
+    setIsGoogleLoading(true)
     setError(null)
     try {
       const { error } = await signInWithGoogle()
@@ -64,7 +65,7 @@ export default function SignUpForm() {
       }
     } catch (error: any) {
       setError(error.message || "Failed to sign up with Google")
-      setIsLoading(false)
+      setIsGoogleLoading(false)
     }
   }
 
@@ -84,7 +85,7 @@ export default function SignUpForm() {
             id="email"
             type="email"
             placeholder="name@example.com"
-            disabled={isLoading}
+            disabled={isEmailLoading || isGoogleLoading}
             {...register("email")}
           />
           {errors.email && (
@@ -96,15 +97,15 @@ export default function SignUpForm() {
           <Input
             id="password"
             type="password"
-            disabled={isLoading}
+            disabled={isEmailLoading || isGoogleLoading}
             {...register("password")}
           />
           {errors.password && (
             <p className="text-sm text-destructive">{errors.password.message}</p>
           )}
         </div>
-        <Button type="submit" className="w-full" disabled={isLoading}>
-          {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+        <Button type="submit" className="w-full" disabled={isEmailLoading || isGoogleLoading}>
+          {isEmailLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
           Sign Up
         </Button>
       </form>
@@ -115,8 +116,8 @@ export default function SignUpForm() {
         <Separator className="flex-1" />
       </div>
 
-      <Button variant="outline" className="w-full" onClick={handleGoogleSignUp} disabled={isLoading}>
-        {isLoading ? (
+      <Button variant="outline" className="w-full" onClick={handleGoogleSignUp} disabled={isEmailLoading || isGoogleLoading}>
+        {isGoogleLoading ? (
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
         ) : (
           <FcGoogle className="mr-2 h-4 w-4" />

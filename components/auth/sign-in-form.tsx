@@ -17,7 +17,8 @@ import { z } from "zod"
 import { FcGoogle } from "react-icons/fc"
 
 export default function SignInForm() {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isEmailLoading, setIsEmailLoading] = useState(false)
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
 
@@ -36,7 +37,7 @@ export default function SignInForm() {
   const handleEmailSignIn = async (values: z.infer<typeof signInSchema>) => {
     setError(null)
     try {
-      setIsLoading(true)
+      setIsEmailLoading(true)
       const { error } = await signIn(values.email, values.password)
 
       if (error) {
@@ -47,12 +48,12 @@ export default function SignInForm() {
     } catch (error) {
       setError(error instanceof Error ? error.message : "Failed to sign in")
     } finally {
-      setIsLoading(false)
+      setIsEmailLoading(false)
     }
   }
 
   const handleGoogleSignIn = async () => {
-    setIsLoading(true)
+    setIsGoogleLoading(true)
     setError(null)
     try {
       const { error } = await signInWithGoogle()
@@ -62,7 +63,7 @@ export default function SignInForm() {
       }
     } catch (error: any) {
       setError(error.message || "Failed to sign in with Google")
-      setIsLoading(false)
+      setIsGoogleLoading(false)
     }
   }
 
@@ -82,7 +83,7 @@ export default function SignInForm() {
             id="email"
             type="email"
             placeholder="name@example.com"
-            disabled={isLoading}
+            disabled={isEmailLoading || isGoogleLoading}
             {...register("email")}
           />
           {errors.email && (
@@ -94,15 +95,15 @@ export default function SignInForm() {
           <Input
             id="password"
             type="password"
-            disabled={isLoading}
+            disabled={isEmailLoading || isGoogleLoading}
             {...register("password")}
           />
           {errors.password && (
             <p className="text-sm text-destructive">{errors.password.message}</p>
           )}
         </div>
-        <Button type="submit" className="w-full" disabled={isLoading}>
-          {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+        <Button type="submit" className="w-full" disabled={isEmailLoading || isGoogleLoading}>
+          {isEmailLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
           Sign In
         </Button>
       </form>
@@ -113,8 +114,8 @@ export default function SignInForm() {
         <Separator className="flex-1" />
       </div>
 
-      <Button variant="outline" className="w-full" onClick={handleGoogleSignIn} disabled={isLoading}>
-        {isLoading ? (
+      <Button variant="outline" className="w-full" onClick={handleGoogleSignIn} disabled={isEmailLoading || isGoogleLoading}>
+        {isGoogleLoading ? (
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
         ) : (
           <FcGoogle className="mr-2 h-4 w-4" />

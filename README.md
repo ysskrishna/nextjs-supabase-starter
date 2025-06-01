@@ -2,6 +2,12 @@
 
 A modern Library Management System built with Next.js 15 and Supabase, featuring a beautiful UI powered by Radix UI components and Tailwind CSS.
 
+## Demo
+
+- **URL:** [https://ysskrishna-nextjs-supabase-starter.vercel.app/](https://ysskrishna-nextjs-supabase-starter.vercel.app/)
+- **Email:** `demo@gmail.com`
+- **Password:** `demopassword`
+
 ## Features
 
 - 🔐 Authentication system with Supabase
@@ -9,6 +15,20 @@ A modern Library Management System built with Next.js 15 and Supabase, featuring
 - 🎨 Modern UI components from Radix UI
 - 📊 Dashboard interface
 - 🎯 TypeScript support
+
+## Screenshots
+
+### Landing Page:
+![Landing](/media/landing.png)
+
+### SignUp Page:
+![Sign Up](/media/signup.png) 
+
+### SignIn Page:
+![Sign In](/media/signin.png) 
+
+### Dashboard Page:
+![Dashboard](/media/dashboard.png)
 
 ## Tech Stack
 

@@ -18,17 +18,53 @@ A modern Library Management System built with Next.js 15 and Supabase, featuring
 
 ## Screenshots
 
-### Landing Page:
-![Landing](/media/landing.png)
+### Landing Page
+<div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+  <div>
+    <h4>Light Theme</h4>
+    <img src="/media/landing.png" alt="Landing Page Light Theme" width="400"/>
+  </div>
+  <div>
+    <h4>Dark Theme</h4>
+    <img src="/media/landing-dark.png" alt="Landing Page Dark Theme" width="400"/>
+  </div>
+</div>
 
-### SignUp Page:
-![Sign Up](/media/signup.png) 
+### SignUp Page
+<div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+  <div>
+    <h4>Light Theme</h4>
+    <img src="/media/signup.png" alt="SignUp Page Light Theme" width="400"/>
+  </div>
+  <div>
+    <h4>Dark Theme</h4>
+    <img src="/media/signup-dark.png" alt="SignUp Page Dark Theme" width="400"/>
+  </div>
+</div>
 
-### SignIn Page:
-![Sign In](/media/signin.png) 
+### SignIn Page
+<div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+  <div>
+    <h4>Light Theme</h4>
+    <img src="/media/signin.png" alt="SignIn Page Light Theme" width="400"/>
+  </div>
+  <div>
+    <h4>Dark Theme</h4>
+    <img src="/media/signin-dark.png" alt="SignIn Page Dark Theme" width="400"/>
+  </div>
+</div>
 
-### Dashboard Page:
-![Dashboard](/media/dashboard.png)
+### Dashboard Page
+<div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+  <div>
+    <h4>Light Theme</h4>
+    <img src="/media/dashboard.png" alt="Dashboard Page Light Theme" width="400"/>
+  </div>
+  <div>
+    <h4>Dark Theme</h4>
+    <img src="/media/dashboard-dark.png" alt="Dashboard Page Dark Theme" width="400"/>
+  </div>
+</div>
 
 ## Tech Stack
 

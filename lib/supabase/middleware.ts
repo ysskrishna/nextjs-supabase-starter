@@ -14,11 +14,9 @@ export async function updateSession(request: NextRequest) {
   // supabase.auth.getUser(). A simple mistake could make it very hard to debug
   // issues with users being randomly logged out.
 
-  console.log("MIDDLWARE before getUser", supabaseResponse)
   const {
     data: { user },
   } = await supabase.auth.getUser()
-  console.log("MIDDLWARE user", user)
 
   // Protected routes
   const protectedRoutes = ["/dashboard"]
@@ -32,15 +30,12 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url)
   }
   
-  console.log("MIDDLWARE with user", user)
   // Redirect authenticated users away from auth pages
   if (user && (request.nextUrl.pathname === "/signin" || request.nextUrl.pathname === "/signup" || request.nextUrl.pathname === "/")) {
     const url = request.nextUrl.clone()
     url.pathname = "/dashboard"
     return NextResponse.redirect(url)
   }
-
-  console.log("MIDDLWARE not matching any of the conditions", user)
 
   // IMPORTANT: You *must* return the supabaseResponse object as it is. If you're
   // creating a new response object with NextResponse.next() make sure to:

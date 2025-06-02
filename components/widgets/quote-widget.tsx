@@ -5,8 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Quote, Loader2 } from "lucide-react"
 
 interface QuoteData {
-  q: string
-  a?: string
+  text: string
+  author?: string
 }
 
 export default function QuoteWidget() {
@@ -17,12 +17,12 @@ export default function QuoteWidget() {
   useEffect(() => {
     const fetchQuote = async () => {
       try {
-        const response = await fetch("https://zenquotes.io/api/random")
+        const response = await fetch("https://thequoteshub.com/api/random-quote?format=json")
         if (!response.ok) {
           throw new Error("Failed to fetch quote")
         }
         const data = await response.json()
-        setQuote(data[0])
+        setQuote(data)
       } catch (err) {
         setError("Could not load quote")
         console.error(err)
@@ -51,8 +51,8 @@ export default function QuoteWidget() {
           <div className="text-center text-muted-foreground h-32 flex items-center justify-center">{error}</div>
         ) : quote ? (
           <div className="space-y-4">
-            <blockquote className="italic text-lg">"{quote.q}"</blockquote>
-            {quote.a && <div className="text-right font-medium">— {quote.a}</div>}
+            <blockquote className="italic text-lg">"{quote.text}"</blockquote>
+            {quote.author && <div className="text-right font-medium">— {quote.author}</div>}
           </div>
         ) : null}
       </CardContent>

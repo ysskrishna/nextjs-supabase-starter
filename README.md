@@ -15,6 +15,25 @@ A modern Library Management System built with Next.js 15 and Supabase, featuring
 - 🎨 Modern UI components from Radix UI
 - 📊 Dashboard interface
 - 🎯 TypeScript support
+- 🌓 Light/Dark theme support with system preference detection
+- 🔄 Automatic route protection and redirections
+
+## Authentication Flow
+
+The application implements a complete authentication flow with the following features:
+
+- Protected routes with automatic redirections
+- Session management using Supabase Auth
+- Google OAuth integration
+- Persistent authentication state
+- Secure token handling
+
+For detailed setup instructions, please refer to the [Authentication Guide](./docs/AUTHENTICATION.md) which includes:
+- Supabase project setup
+- Google OAuth configuration
+- Environment variables setup
+- Authentication middleware configuration
+
 
 ## Screenshots
 
@@ -114,6 +133,8 @@ A modern Library Management System built with Next.js 15 and Supabase, featuring
 ├── lib/            # Utility functions and configurations
 ├── public/         # Static assets
 └── styles/         # Global styles
+└── docs/           # Documentation
+    └── AUTHENTICATION.md  # Authentication setup guide
 ```
 
 ## Dependencies

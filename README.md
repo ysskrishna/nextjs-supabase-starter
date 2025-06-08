@@ -8,7 +8,7 @@
 
 # NextJS Supabase Starter
 
-A modern Library Management System built with Next.js 15 and Supabase, featuring a beautiful UI powered by Radix UI components and Tailwind CSS.
+A modern Next.js starter template with Supabase integration, featuring a beautiful UI powered by Radix UI components and Tailwind CSS.
 
 ## Demo
 
